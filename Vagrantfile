@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.100.100", auto_correct: true
   config.vm.synced_folder "webroot", "/usr/share/nginx/html", owner: "www-data", group: "www-data"
   config.vm.provider "virtualbox" do |v|
-    v.name = "Vagrant-LEMP"
+    v.name = "ev-piu"
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "80"]
     v.customize ["modifyvm", :id, "--memory", 2048]
     v.customize ["modifyvm", :id, "--cpus", 1]
