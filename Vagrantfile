@@ -79,7 +79,7 @@ Vagrant.configure("2") do |config|
     sudo systemctl start php7.0-fpm >/dev/null 2>&1
     # sudo systemctl status php7.0-fpm
     echo "... configuring PHP 7 for Nginx ..."
-    sudo cp /vagrant/config/nginx-default.conf /etc/nginx/conf.d/default.conf >/dev/null 2>&1
+    sudo cp /vagrant/config/nginx-default.conf /etc/nginx/conf.d/default.conf
     sudo nginx -t >/dev/null 2>&1
     sudo systemctl reload nginx >/dev/null 2>&1
     echo "... done installing PHP 7."
