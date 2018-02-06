@@ -22,46 +22,46 @@ nbactions.xml
 .properties
 
 # Ignore Bonfire Application Specifics
-application/logs/*
-!application/logs/index.html
-install/logs/*
-application/cache/*
-!application/cache/index.html
-public/assets/cache/*
-!public/assets/cache/index.html
+webroot/application/logs/*
+!webroot/application/logs/index.html
+webroot/install/logs/*
+webroot/application/cache/*
+!webroot/application/cache/index.html
+webroot/public/assets/cache/*
+!webroot/public/assets/cache/index.html
 
 # Ignore Custom config files
-application/config/development/*
-application/config/testing/*
-application/config/production/*
-application/config/installed.txt
+webroot/application/config/development/*
+webroot/application/config/testing/*
+webroot/application/config/production/*
+webroot/application/config/installed.txt
 
 # but leave the config folders there
-!application/config/development/index.html
-!application/config/testing/index.html
-!application/config/production/index.html
+!webroot/application/config/development/index.html
+!webroot/application/config/testing/index.html
+!webroot/application/config/production/index.html
 
 # Helping GUIs omiting subtree repos
-bonfire/modules/**/.git/*
-bonfire/modules/**/.hg/*
-application/modules/**/.git/*
-application/modules/**/.hg/*
-!application/modules/index.html
+webroot/bonfire/modules/**/.git/*
+webroot/bonfire/modules/**/.hg/*
+webroot/application/modules/**/.git/*
+webroot/application/modules/**/.hg/*
+!webroot/application/modules/index.html
 
 
 # Ignore all custom modules.
-application/modules/*
+webroot/application/modules/*
 # Except the following modules:
 
 # Remove PHPStorm Project folders
-bonfire/.ideas
+webroot/bonfire/.ideas
 .idea/*
 
 # Ignore the installed.txt file
-public/install/installed.txt
+webroot/public/install/installed.txt
 
 # Ignore any composer downloaded packages
-vendor/*
+webroot/vendor/*
 
 # Ignore any sparks that have been loaded
-sparks/*
+webroot/sparks/*
