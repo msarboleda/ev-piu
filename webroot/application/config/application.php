@@ -19,7 +19,7 @@ $config['bonfire.installed'] = "1";
 /**
  * Used to set the default timezone for the user registration page
  */
-$config['site.default_user_timezone'] = 'UM8';
+$config['site.default_user_timezone'] = 'UM5';
 
 //------------------------------------------------------------------------------
 // Module Locations
