@@ -27,10 +27,8 @@
  * @link       http://guides.cibonfire.com/helpers/file_helpers.html
  *
  */
-class Home extends MX_Controller
-{
-	public function __construct()
-	{
+class Home extends MX_Controller {
+	public function __construct() {
 		parent::__construct();
 
 		$this->load->helper('application');
@@ -38,18 +36,20 @@ class Home extends MX_Controller
 		$this->load->library('Assets');
 		$this->lang->load('application');
 		$this->load->library('events');
+    $this->load->library('installer_lib');
 
-        $this->load->library('installer_lib');
-        if (! $this->installer_lib->is_installed()) {
-            $ci =& get_instance();
-            $ci->hooks->enabled = false;
-            redirect('install');
-        }
+    if (! $this->installer_lib->is_installed()) {
+      $ci =& get_instance();
+      $ci->hooks->enabled = false;
+      redirect('install');
+    }
 
-        // Make the requested page var available, since
-        // we're not extending from a Bonfire controller
-        // and it's not done for us.
-        $this->requested_page = isset($_SESSION['requested_page']) ? $_SESSION['requested_page'] : null;
+    // Make the requested page var available, since
+    // we're not extending from a Bonfire controller
+    // and it's not done for us.
+    $this->requested_page = isset($_SESSION['requested_page']) ? $_SESSION['requested_page'] : null;
+
+		$this->load->model('blog/post_model', 'publ_model', true);
 	}
 
 	//--------------------------------------------------------------------
@@ -59,13 +59,28 @@ class Home extends MX_Controller
 	 *
 	 * @return void
 	 */
-	public function index()
-	{
-		$this->load->library('users/auth');
-		$this->set_current_user();
+	 public function index() {
+     $this->load->library('users/auth');
+     $this->set_current_user();
+     $this->load->helper('typography');
 
-		Template::render();
-	}//end index()
+     $publicaciones = $this->publ_model->where('deleted', 0)
+		 																	 ->order_by('created_on', 'desc')
+                             					 ->limit(5)
+                             					 ->find_all();
+
+     Template::set('publicaciones', $publicaciones);
+		 Template::set_view('blog/index');
+     Template::render();
+   }
+
+	 public function post($id = null) {
+     if ($id != null) {
+       Template::set('publicacion', $this->publ_model->find($id));
+       Template::set_view('blog/content/post_view');
+       Template::render();
+     }
+   }
 
 	//--------------------------------------------------------------------
 
@@ -78,27 +93,26 @@ class Home extends MX_Controller
 	 *
 	 * Copied from Base_Controller
 	 */
-	protected function set_current_user()
-	{
-        if (class_exists('Auth')) {
+	protected function set_current_user() {
+    if (class_exists('Auth')) {
 			// Load our current logged in user for convenience
-            if ($this->auth->is_logged_in()) {
+      if ($this->auth->is_logged_in()) {
 				$this->current_user = clone $this->auth->user();
-
 				$this->current_user->user_img = gravatar_link($this->current_user->email, 22, $this->current_user->email, "{$this->current_user->email} Profile");
 
 				// if the user has a language setting then use it
-                if (isset($this->current_user->language)) {
+        if (isset($this->current_user->language)) {
 					$this->config->set_item('language', $this->current_user->language);
 				}
-            } else {
+      } else {
 				$this->current_user = null;
 			}
 
 			// Make the current user available in the views
-            if (! class_exists('Template')) {
+      if (! class_exists('Template')) {
 				$this->load->library('Template');
 			}
+
 			Template::set('current_user', $this->current_user);
 		}
 	}
