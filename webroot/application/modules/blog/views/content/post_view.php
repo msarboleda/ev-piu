@@ -7,9 +7,11 @@
         <div class="post-heading">
           <h1><?php e($publicacion->titulo); ?></h1>
           <h2 class="subheading"><?php e($publicacion->subtitulo); ?></h2>
-          <span class="meta">Escrito por
-            <a href="#"><?php e($publicacion->autor); ?></a>
+          <span class="meta">Escrito por <?php e($publicacion->autor); ?>
             en <?php e(strftime(date('F j, Y', strtotime($publicacion->created_on)))); ?></span>
+          <?php if (isset($publicacion->modified_on)) : ?>
+          <span class="meta">Actualizado en <?php e(strftime(date('F j, Y', strtotime($publicacion->modified_on)))); ?></span>
+          <?php endif; ?>
         </div>
       </div>
     </div>
