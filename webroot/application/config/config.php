@@ -24,7 +24,7 @@ date_default_timezone_set('America/Bogota');
 | a PHP script and you can easily do that on your own.
 |
  */
-$config['base_url']	= 'http://ev-piu.local/public/';
+$config['base_url']	= 'http://ev-piu.local/';
 
 /*
 |--------------------------------------------------------------------------

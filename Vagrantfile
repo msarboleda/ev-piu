@@ -7,7 +7,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/xenial64"
   config.vm.boot_timeout = 600
   config.vm.network "private_network", ip: "192.168.100.100", auto_correct: true
-  config.vm.synced_folder "webroot", "/var/www/html", owner: "www-data", group: "www-data"
+  config.vm.synced_folder "webroot", "/var/www/ev-piu", owner: "www-data", group: "www-data"
   config.vm.provider "virtualbox" do |v|
     v.name = "ev-piu"
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "80"]
