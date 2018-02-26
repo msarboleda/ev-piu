@@ -9,9 +9,17 @@ $css_array = array(
   'build/css/custom.min.css'
 );
 
-Assets::add_css($css_array);
+$js_array = array(
+  'vendors/jquery/dist/jquery.min.js',
+  'vendors/bootstrap/dist/js/bootstrap.min.js',
+  'vendors/fastclick/lib/fastclick.js',
+  'vendors/nprogress/nprogress.js',
+  'build/js/custom.min.js',
+);
 
-Assets::add_js('bootstrap.min.js');
+
+Assets::add_css($css_array);
+Assets::add_js($js_array);
 
 $inline  = '$(".dropdown-toggle").dropdown();';
 $inline .= '$(".tooltips").tooltip();';
