@@ -26,6 +26,11 @@ echo "Installing common packages..."
 sudo apt-get install -y --force-yes vim htop curl build-essential python-software-properties git
 
 echo ""
+echo "... configuring Locales"
+sudo locale-gen es_CO.UTF-8
+sudo dpkg-reconfigure locales
+
+echo ""
 echo "Installing Apache..."
 sudo apt-get install -y --force-yes apache2
 
