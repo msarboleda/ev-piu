@@ -3,7 +3,7 @@
 $config['module_config'] = array(
   'name'        => 'Dashboard',
   'description' => '',
-  'author'      => 'Estrada Velasquez Development',
+  'author'      => 'EV Development',
   'homepage'    => 'http://...',
   'version'     => '1.0.1'
 );
