@@ -63,12 +63,12 @@
       	<?php echo form_close(); ?>
       </section>
 
+			<?php // show for Email Activation (1) only
+				if ($this->settings_lib->item('auth.user_activation_method') == 1) : ?>
 			<div class="x_content">
 				<div class="alert alert-info alert-dismissible fade in" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
 					</button>
-					<?php // show for Email Activation (1) only
-						if ($this->settings_lib->item('auth.user_activation_method') == 1) : ?>
 						<!-- Activation Block -->
 							<p><?php echo lang('bf_login_activate_title'); ?></p>
 							<p><?php
@@ -76,9 +76,9 @@
 								$activate_str = str_replace('[ACTIVATE_RESEND_URL]',anchor('/resend_activation', lang('bf_activate_resend')),$activate_str);
 								echo $activate_str; ?>
 							</p>
-					<?php endif; ?>
 				</div>
 			</div>
+			<?php endif; ?>
     </div>
   </div>
 
