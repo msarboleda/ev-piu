@@ -26,6 +26,11 @@ echo "Installing common packages..."
 sudo apt-get install -y --force-yes vim htop curl build-essential python-software-properties git
 
 echo ""
+echo "... configuring Locales"
+sudo locale-gen es_CO.UTF-8
+sudo dpkg-reconfigure locales
+
+echo ""
 echo "Installing Apache..."
 sudo apt-get install -y --force-yes apache2
 
@@ -65,7 +70,7 @@ cat << EOF | sudo tee -a /etc/apache2/sites-available/default.conf
     AllowOverride All
 </Directory>
 <VirtualHost *:80>
-    DocumentRoot /var/www/ev-piu
+    DocumentRoot /var/www/ev-piu/public
     ServerName ev-piu.local
     ServerAlias www.ev-piu.local
 </VirtualHost>
@@ -75,6 +80,7 @@ cat << EOF | sudo tee -a /etc/apache2/sites-available/default.conf
     ServerAlias www.phpmyadmin.local
 </VirtualHost>
 EOF
+sudo a2dissite 000-default.conf
 sudo a2ensite default.conf
 restartApache
 

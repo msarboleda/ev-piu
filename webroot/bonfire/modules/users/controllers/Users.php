@@ -104,7 +104,7 @@ class Users extends Front_Controller
         }
 
         // Prompt the user to login.
-        Template::set('page_title', 'Login');
+        Template::set('page_title', 'Ingreso');
         Template::render('login');
     }
 
@@ -255,10 +255,9 @@ class Users extends Front_Controller
         // Generate password hint messages.
         $this->user_model->password_hints();
 
-        Template::set_view('users/register');
         Template::set('languages', unserialize($this->settings_lib->item('site.languages')));
-        Template::set('page_title', 'Register');
-        Template::render();
+        Template::set('page_title', 'Registro');
+        Template::render('login');
     }
 
     // -------------------------------------------------------------------------

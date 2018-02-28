@@ -19,7 +19,7 @@ $config['bonfire.installed'] = "1";
 /**
  * Used to set the default timezone for the user registration page
  */
-$config['site.default_user_timezone'] = 'UM8';
+$config['site.default_user_timezone'] = 'UM5';
 
 //------------------------------------------------------------------------------
 // Module Locations
@@ -129,7 +129,7 @@ $config['template.use_mobile_themes'] = false;
 //------------------------------------------------------------------------------
 // This is the folder name that contains the default theme to use when
 // 'template.use_mobile_themes' is set to true.
-$config['template.default_theme']	= 'default/';
+$config['template.default_theme']	= 'gentelella-master/';
 
 //------------------------------------------------------------------------------
 // ADMIN THEME

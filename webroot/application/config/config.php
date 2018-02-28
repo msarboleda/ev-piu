@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+date_default_timezone_set('America/Bogota');
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
  */
-$config['base_url']	= 'http://ev-piu.local/public/';
+$config['base_url']	= 'http://ev-piu.local/';
 
 /*
 |--------------------------------------------------------------------------
@@ -316,7 +317,7 @@ $config['cache_query_string'] = false;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = "58f62e7a5c072527eb00fad7ccb6f547";
+$config['encryption_key'] = "aa214ab2bc43c20b03defe4a723b6344";
 
 /*
 |--------------------------------------------------------------------------

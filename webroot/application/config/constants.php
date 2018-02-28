@@ -95,6 +95,7 @@ defined('BONFIRE_VERSION') || define('BONFIRE_VERSION', 'v0.9.0-dev');
 // for all applications.
 // -----------------------------------------------------------------------------
 defined('SITE_AREA') || define('SITE_AREA', 'admin');
+defined('EVPIU_AREA') || define('EVPIU_AREA', 'dashboard');
 
 // -----------------------------------------------------------------------------
 // The 'LOGIN_URL' and 'REGISTER_URL' constant allows changing of the url where
