@@ -44,7 +44,7 @@
             <a class="nav-link" href="<?php echo site_url('logout'); ?>"><i class="fa fa-sign-out"></i> Cerrar Sesion</a>
           </li>
           <li class="nav-item">
-            <button class="btn btn-primary" type="button"><a href="<?php echo site_url(EVPIU_AREA); ?>">Tablero de Trabajo</a></button>
+            <a href="<?php echo site_url(EVPIU_AREA); ?>"><button class="btn btn-default" type="button">Tablero de Trabajo</button></a>
           </li>
         </ul>
         <?php } else if (isset($current_user->email) && $current_user->role_id !== 1) { ?>
@@ -52,12 +52,17 @@
             <a class="nav-link" href="<?php echo site_url('logout'); ?>"><i class="fa fa-sign-out"></i> Cerrar Sesion</a>
           </li>
           <li class="nav-item">
-            <button class="btn btn-primary" type="button"><a href="<?php echo site_url(EVPIU_AREA); ?>">Tablero de Trabajo</a></button>
+            <a href="<?php echo site_url(EVPIU_AREA); ?>"><button class="btn btn-default" type="button">Tablero de Trabajo</button></a>
           </li>
         </ul>
-        <?php } else { ?>
+        <?php } else {
+          echo $current_user;
+
+          ?>
+          <li class="nav-item">
+            <a href="<?php echo site_url(LOGIN_URL); ?>"><button class="btn btn-default" type="button"><?php echo lang('bf_action_login'); ?></button></a>
+          </li>
         </ul>
-        <button class="btn btn-default" type="button"><a href="<?php echo site_url(LOGIN_URL); ?>"><?php echo lang('bf_action_login'); ?></a></button>
         <?php } ?>
       </div>
     </div>

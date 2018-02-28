@@ -37,6 +37,8 @@ class Home extends MX_Controller {
 		$this->lang->load('application');
 		$this->load->library('events');
     $this->load->library('installer_lib');
+		$this->load->library('users/auth');
+		$this->set_current_user();
 
     if (! $this->installer_lib->is_installed()) {
       $ci =& get_instance();
@@ -60,8 +62,6 @@ class Home extends MX_Controller {
 	 * @return void
 	 */
 	 public function index() {
-     $this->load->library('users/auth');
-     $this->set_current_user();
      $this->load->helper('typography');
 
      $publicaciones = $this->publ_model->where('deleted', 0)
