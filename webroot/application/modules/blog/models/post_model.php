@@ -24,11 +24,6 @@ class Post_model extends MY_Model {
       'field' => 'contenido',
       'label' => 'contenido',
       'rules' => 'trim|strip_tags'
-    ),
-    array(
-      'field' => 'url',
-      'label' => 'url',
-      'rules' => 'trim|strip_tags'
     )
   );
 
@@ -36,7 +31,6 @@ class Post_model extends MY_Model {
     'titulo' => 'required',
     'subtitulo'  => 'required',
     'contenido' => 'required',
-    'url' => 'required'
   );
 
   public function __construct() {
