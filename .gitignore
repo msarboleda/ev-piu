@@ -65,3 +65,4 @@ webroot/vendor/*
 
 # Ignore any sparks that have been loaded
 webroot/sparks/*
+webroot/webroot
