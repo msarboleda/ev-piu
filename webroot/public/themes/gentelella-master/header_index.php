@@ -55,10 +55,7 @@
             <a href="<?php echo site_url(EVPIU_AREA); ?>"><button class="btn btn-default" type="button">Tablero de Trabajo</button></a>
           </li>
         </ul>
-        <?php } else {
-          echo $current_user;
-
-          ?>
+        <?php } else { ?>
           <li class="nav-item">
             <a href="<?php echo site_url(LOGIN_URL); ?>"><button class="btn btn-default" type="button"><?php echo lang('bf_action_login'); ?></button></a>
           </li>
