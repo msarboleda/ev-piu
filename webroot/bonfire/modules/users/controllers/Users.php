@@ -150,13 +150,13 @@ class Users extends Front_Controller
         $this->load->helper('address');
 
         $this->load->config('user_meta');
-        $meta_fields = config_item('user_meta_fields');
+        //$meta_fields = config_item('user_meta_fields');
 
-        Template::set('meta_fields', $meta_fields);
+        //Template::set('meta_fields', $meta_fields);
 
         if (isset($_POST['save'])) {
             $user_id = $this->current_user->id;
-            if ($this->saveUser('update', $user_id, $meta_fields)) {
+            if ($this->saveUser('update', $user_id)) {
                 $user = $this->user_model->find($user_id);
                 $log_name = empty($user->display_name) ?
                     ($this->settings_lib->item('auth.use_usernames') ? $user->username : $user->email)
@@ -192,9 +192,7 @@ class Users extends Front_Controller
 
         Template::set('user', $user);
         Template::set('languages', unserialize($this->settings_lib->item('site.languages')));
-
-        Template::set_view('profile');
-        Template::render();
+        Template::render('evpiu');
     }
 
     /**
