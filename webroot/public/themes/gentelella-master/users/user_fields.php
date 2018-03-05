@@ -2,8 +2,8 @@
 
   $currentMethod = $this->router->method;
 
-  $errorClass     = empty($errorClass) ? ' error' : $errorClass;
-  $controlClass   = empty($controlClass) ? 'span4' : $controlClass;
+  $errorClass     = empty($errorClass) ? ' bad' : $errorClass;
+  $controlClass   = empty($controlClass) ? '' : $controlClass;
   $registerClass  = $currentMethod == 'register' ? ' required' : '';
   $editSettings   = $currentMethod == 'edit';
 
