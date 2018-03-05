@@ -56,7 +56,7 @@ Assets::add_js($inline, 'inline');
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="images/user.png" alt="..." class="img-circle profile_img">
+              <img src="<?php echo Assets::assets_url('image'); ?>user.png" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Bienvenido(a),</span>
@@ -110,11 +110,11 @@ Assets::add_js($inline, 'inline');
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="images/user.png" alt=""><?php echo $user->display_name; ?>
+                  <img src="<?php echo Assets::assets_url('image'); ?>user.png" alt=""><?php echo $user->display_name; ?>
                   <span class="fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
-                  <li><a href="javascript:void(0);"> Mi perfil</a></li>
+                  <li><a href="<?php echo site_url('users/profile'); ?>"> Mi perfil</a></li>
                   <li><a href="<?php echo site_url('logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a></li>
                 </ul>
               </li>
@@ -157,3 +157,4 @@ Assets::add_js($inline, 'inline');
 
       <!-- page content -->
       <div class="right_col" role="main">
+        <br/><br/><br/>
