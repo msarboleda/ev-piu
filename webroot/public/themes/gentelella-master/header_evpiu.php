@@ -42,7 +42,7 @@ Assets::add_js($inline, 'inline');
   <?php echo Assets::css(); ?>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>favicon.ico">
 </head>
-<body class="nav-md footer_fixed">
+<body class="nav-md">
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
