@@ -159,7 +159,7 @@ $lang['bf_model_find_error']    = 'No hay suficiente información para buscar po
 // Contexts
 //--------------------------------------------------------------------
 $lang['bf_no_contexts']         = 'La matriz de contexto no esta configurada apropiadamente. Verifica el archivo de configuración.';
-$lang['bf_context_content']     = 'Contenido';
+$lang['bf_context_content']     = 'Aplicaciones';
 $lang['bf_context_reports']     = 'Reportes';
 $lang['bf_context_settings']    = 'Configuraciones';
 $lang['bf_context_developer']   = 'Desarrollo';
