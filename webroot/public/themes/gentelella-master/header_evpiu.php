@@ -48,7 +48,7 @@ Assets::add_js($inline, 'inline');
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="<?php site_url('dashboard'); ?>" class="site_title"><i class="fa fa-paw"></i> <span>EV PIU</span></a>
+            <a href="<?php site_url('dashboard'); ?>" class="site_title"><img src="<?php echo img_path(); ?>evpiu_logo.png"> <span>EV PIU</span></a>
           </div>
 
           <div class="clearfix"></div>
